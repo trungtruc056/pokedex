@@ -28,7 +28,7 @@ class PokemonDetail extends Component {
                     <Col>
                         <div className="m-auto text-center">
                         <img src={this.urlImg} alt=""/>
-                        <p>{pokemonDetail.name}</p>
+                        <p className="font-weight-bold text-uppercase">{pokemonDetail.name}</p>
                         <p>Height: {pokemonDetail.height}</p>
                         <p>Weight: {pokemonDetail.weight}</p>
                         </div>

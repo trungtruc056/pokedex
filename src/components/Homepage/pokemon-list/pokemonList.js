@@ -45,9 +45,23 @@ class PokemonList extends Component {
         });
     }
 
+    // sortNameAlphabetically(a, b) {
+    //     const nameA = a.name.toUpperCase();
+    //     const nameB = b.name.toUpperCase();
+    //
+    //     let comparison = 0;
+    //     if (nameA > nameB) {
+    //         comparison = 1;
+    //     } else if (nameA < nameB) {
+    //         comparison = -1;
+    //     }
+    //     return comparison;
+    // }
+
     render() {
         const {currentPage} = this.state;
         let {pokemonList} = this.state;
+        // pokemonList.sort(this.sortNameAlphabetically);
         let search = this.state.searchString.trim().toLowerCase();
         if (search.length > 0) {
             pokemonList = pokemonList.filter(cell => cell.name.toLowerCase().match(search));
@@ -66,8 +80,17 @@ class PokemonList extends Component {
                                 placeholder="Search Name Pokemon"
                             />
                         </Col>
+                        {/*<Col lg={{size: 2, offset: 10}} className="mb-4">*/}
+                        {/*    <Input type="select"*/}
+                        {/*           name="select"*/}
+                        {/*           id="exampleSelect">*/}
+                        {/*        <option>A to Z</option>*/}
+                        {/*        <option>Z to A</option>*/}
+                        {/*    </Input>*/}
+                        {/*</Col>*/}
                         <React.Fragment>
                             {pokemonList
+                                // .sort()
                                 .slice(
                                     currentPage * this.pageSize,
                                     (currentPage + 1) * this.pageSize
